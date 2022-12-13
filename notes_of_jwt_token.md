@@ -33,6 +33,8 @@ Claims are physical informations where
 ---
 
 ### **A legal JWT will be stored in the HttpOnly Cookie**
+![spring_jwt_flow](spring_jwt_flow.png)
+
 ---
 ###  What are Cookies
 Simply we can call cookies a **Tracker**.
@@ -52,3 +54,5 @@ Client  -----> Spring Server
 
 1. Refresh Token ------[Request with JWT] --------> validate JWT
 2. If token is verified, Server will return with **new access token**, and **new refresh token**
+
+![more](access_refresh_token.png)
