@@ -6,12 +6,14 @@
 
 * collection framework and the collection interface are not the same. The collection interface is the part of the whole collection framework.
 <br>
-<br>
+
 ### Why Collection is useful:
+
 * reduces programming effort
 * Optimized performances as this frameworks used the best algorithms
 * built in methods and classes
 * Inter operationability --> Two APIs communicate with each other with collections like --> transfer values in Dictionary formats etc.<br>
+
 <br>
 
 ### The Collection Framework Hierarchy
