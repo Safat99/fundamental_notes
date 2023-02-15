@@ -41,6 +41,10 @@ nums as HashSet: [2, 100, 300]
 * Hashtable takes **constant time** whatever the size of the List is. Compare to List, all the
 basic operations like add(), remove(), insert() takes constant time; where ArrayList will take more time as the size gets bigger.
 
+* default capacity of HashSet is 16, **load factor** is 0.75
+* doesn't maintain the insertion order
+* best approach for search operation.
+
 ### TreeSet
 **Features**
 
@@ -52,3 +56,4 @@ it maintains the alphabetical orders.
 **Features**
 * It is similar like the HashSet. But it keeps the insertion order
 * Almost as fast as HashSet. Slightly less it keeps the insertion order.
+* maintain the insertion order.
