@@ -1,5 +1,22 @@
-How you can change the virtual capacity of an ArrayList?
+## Java ArrayList
 
+Features:
+* contain duplicate values
+* maintain insertion order
+* class is non synchronized
+* allow random access
+* manipulation is a little bit slower than Linked List
+
+###  Question: How you can change the virtual capacity of an ArrayList?
+
+In Java whenever we create an instance of an ArrayList by default the capacity is 10.
+
+ArrayList is a growble array, so it automatically resizes itself whenver a number of elements in ArrayList grow beyond a threshold.
+
+Also there is a method `ensureCapacity()` which can initially increase the capacity of an ArrayList.
+
+
+---
 * ArrayList and all the collections will only store objects not primitive types of data
 * we have to write the wrapper class in the array list.
 
