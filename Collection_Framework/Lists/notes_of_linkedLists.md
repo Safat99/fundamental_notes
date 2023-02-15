@@ -11,6 +11,7 @@
 ### Advantage
 * Dynamicity
 * ease of insertions and deletions
+* can be used as a list,stack or queue.
 
 ### Disadvantage
 * Nodes cannot acces directly
@@ -19,13 +20,24 @@
 
 Q1. What is the difference between ArrayList and LinkedList?
 --
-<p>
-Linked List is a implementation of List Interface
 
-ArrayList is also a implementation of List Interface
+| ArrayList | Linked List |
+| --- | ---|
+| dynamic array | doubly linked list is by default set on the java collection | 
+| slow | fast |
+| act as a list | act as a list and queue |
+| better for sorting and accessing data | better for manipulation |
+| contiguous | not contiguous |
+| default capacity 10 of assigned to the ArrayList | no default capacity |
+| special feature resizable array | doubly Linked List |
 
-But Linked-List is also have the implementation of the Queue  and the Deque interface also..
-<p>
+
+in short :
+* Linked List is a implementation of List Interface
+
+* ArrayList is also a implementation of List Interface
+
+* But Linked-List is also have the implementation of the Queue  and the Deque interface also..
 
 ![pic2](arrayList_vs_linkedList.png)
 
