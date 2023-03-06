@@ -46,6 +46,11 @@ It performs the sequential operations.
 Now if the write operations failed somehow, the value of A will not be changed, it will return back to the initial stage. This is the atomicity property of a transaction.
 
 
+4. Durability: it means that once the transaction have been committed, the data will be written to the non volatile memory, so even crash happens it remains the same. The cannot become corrupted, it makes sure that.
+
+
+
+All the SQL datbase follows the ACID property. But NoSQL are not. They are mostly designed to be highly available. So they sacrifices either the consistency or the durability. MongoDB is in some case ACID compliants. 
 
 ## Delete vs Truncate command
 
