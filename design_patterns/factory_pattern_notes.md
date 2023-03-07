@@ -78,3 +78,21 @@ public class Windows implements OS {
     }
 }
 ```
+the ultimate **FactoryClass** will be `OperatingSystemFactory.java`
+```
+package FactoryDesignPattern;
+
+public class OperatingSystemFactory {
+
+    public OS getInstance(String str) {
+
+        if (str.equals("Open"))
+            return new Android();
+        else if (str.equals("Closed"))
+            return new IOS();
+        else
+            return new Windows();
+    }
+}
+```
+this class will do all the creation and returns the object that the client needs.
