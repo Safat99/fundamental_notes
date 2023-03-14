@@ -13,7 +13,7 @@ If the experience coders solves a problem, they always want to reuse them so tha
 
 ---
 ### The main two principles for writing OOP softwares 
-* Always use `Composition` over `Inheritence`
+* Always use `Composition` over `Inheritence` [details](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)
 * When we code, always write code for `Interface`, not for the `Implementation`.
 
 ### Main Categories
