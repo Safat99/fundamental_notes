@@ -33,6 +33,9 @@ Sometimes we need to dynamically, shows different block in the page. With normal
 * takes user input.
 * process requests (GET, POST, PUT, UPDATE)
 * It takes data from model and then process it/or not then pass it to the view. Then the template engine renders those data and browsers show those rendered data.
+* The controller routes data between views and models. 
+
+eg: If a user click a save button on the **view**, the controller **routes** the "save" action to the model to save the data into a db. 
 
 
 ![the diagram](mvc_diagram.png)
