@@ -44,3 +44,5 @@ Records will have:
 
 * can't declare `native methods`.
 * can't declare fields(variables) other than in the header.
+
+**Native Methods** : the methods which are written in another language and initialized in java with `native` keyword, those are called native methods.
