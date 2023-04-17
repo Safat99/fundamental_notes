@@ -1,0 +1,13 @@
+Spring also provides @ResponseBody annotation which tells a controller that the object returned is automatically serialized into JSON and passed it to the HttpResponse object.
+This way does not require ResponseEntity but you need to use @ResponseStatus to set the HTTP status code for that exception.
+
+@ControllerAdvice annotation. This class handles specific exception (ResoureNotFoundException) and global Exception in only one place.
+
+@JsonIgnore is used to ignore the logical property used in serialization and deserialization. If we want a property of the entity not to be shown by the post request we will use that.
+
+
+** The types of collections that are supported by Spring are `List`, `Set`, `Map` and `Properties`.
+
+
+Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”.
+

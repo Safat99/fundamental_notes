@@ -42,8 +42,8 @@ OOP is the best tool have the programmers right now to create complex programs b
 2. Encapsulation
 3. Inheritance 
 4. Polymorphism
-
-### Abstraction
+---
+## Abstraction
 Users(client) don't have the full control of the functionality rather user can see the list of functions
 There are two ways of abstraction:
 
@@ -69,9 +69,82 @@ Abstract Method e.g. `abstract void message()` has some features/rules:
 * there will be no body {}
 * It must be inside the abstract class
 * It must be overriden ==> If some class extends this abstract class, then this method must be overriden
-* It can never be final and static.
+* **It can never be final and static.**
 
 *Inside abstract class, we can use both abstract and non-abstract method
 But when 100% abstraction(interface) happens ==> only abstract method have to be used.*
 
 * abstract method can never be in the non-abstract class
+* We cannot create any object of Abstract class. Instead we have to create reference variable 
+
+### Example of abstraction
+```
+abstract class MobileUser {
+    abstract void sendMessage();
+}
+
+class Rahim extends MobileUser {
+
+    @Override
+    void sendMessage() {
+        System.out.println("Hi this is Rahim");
+    }
+}
+
+class Karim extends MobileUSer {
+    
+    @Override
+    void sendMessage() {
+        System.out.println("Hi, this is Karim!");
+    }
+}
+```
+The main class will be look like this.  
+
+```
+public class Test {
+    
+    public static void main(String[] args) {
+
+        MobileUser ms;
+        ms = new Rahim();
+        ms.sendMessage();
+
+        ms = new Karim();
+        ms.sendMesage
+    }
+}
+```
+---
+
+### Interface
+
+* An interface is a collection of abstract methods
+* Only abstract methods are in the interface
+* It is useful for fully abstraction
+* Multiple inheritance can be possible of interface.
+
+Declaration
+```
+interface className {
+
+}
+```
+in the interface method, java compiler automatically include auto, public inside the **methods of interface**
+<br><br>
+
+### Advantage(Why do we use interface?)
+A class can only inherit only one super class using the **extends**. It can not inherit multiple class. But Interface can extend multiple class.
+Interface can inherit multiple super class. <br>
+<br>
+
+### Why interface supports multiple interface and class don't?
+
+If there is some common name method between two class, and the 3rd class  wants to extend the both class, it willface ambiguity when it creates an object and call that common-name method.
+
+
+### Features of Interface:
+* the interface variable will be alltime constant.
+Compiler automatically includes **publc static** in front of the variable.
+* We **cannot declare any instance variable** in interface
+* All **method** has to be **public**
