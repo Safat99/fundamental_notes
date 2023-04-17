@@ -14,6 +14,19 @@
 * built in methods and classes
 * Inter operationability --> Two APIs communicate with each other with collections like --> transfer values in Dictionary formats etc.<br>
 
+--- 
+### Array vs CollectionFramework (ArrayList)
+
+Array Limitations: 
+* Fixed in Size
+* Homogeneous data type of elements
+* Underlying DS/ Readymade method is not supported
+
+**Array can hold both primitives and objects where Collection can only hold objects** 
+
+---
+
+
 <br>
 
 ### The Collection Framework Hierarchy

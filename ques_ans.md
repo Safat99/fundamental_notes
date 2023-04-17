@@ -67,7 +67,7 @@ FetchType.EAGER = This loads all the relationships.
 
 * This index also permits fast access to data when pk is used in quieres.
 
-* If a pk is defined on more than one column, values may be duplicated within one column, but each combination of values from one column definition must be unique.  
+* If a pk is defined on more than one column, values may be duplicated within different column, but each combination of values from one column definition must be unique.  
 
 
 ```
