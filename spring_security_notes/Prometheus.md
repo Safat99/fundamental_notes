@@ -45,7 +45,7 @@ So without any crash happening, maintaining them and debugging them manually is 
 * Regularly checks each servers memory usage. Like if any server's memory percentage spikes 70% and continuously increasing, it will notify the administrator. 
 
 
-## How Prometheus Work? Prometheus Architecture: 
+# How Prometheus Work? Prometheus Architecture: 
 
 ### Prometheus Server 
 
@@ -110,4 +110,66 @@ If we want to monitor our apps like:
 * How many server resources are used? 
 
 
-Prometheus have client libraries with different languages (Go, Java, Python, Ruby)  We can expose /metrics endpoints from those libraries.  
+Prometheus have client libraries with different languages (Go, Java, Python, Ruby)  We can expose /metrics endpoints from those libraries.
+
+ 
+
+## Pull Mechanism (unique advantage of Prometheus) 
+Prometheus pulls data from target's endpoints and it's an important characteristics of Prometheus.  
+
+Most monitoring system like ( Amazon Cloud Watch, New Relic etc..) uses push system. Meaning Applications/Servers push to a centralized collection platform. They push their metric data to a centralized platform of that monitoring tool. So when we work on many microservices and each service pushing their metrics to the monitoring tool.
+
+* It creates a huge network traffic.  
+* So monitoring can become our bottleneck.  
+* Plus we have to install additional software or tool to push metrics. 
+
+Where Prometheus requires scrapping endpoints. As a result it has some advantages:  
+### Pull system – more advantage ==>>> 
+* Multiple Prometheus instances can pull metrics data 
+* Better detection/insight if service is up and running. Because if it's push mechanism and service is not pushing data or health status that conflicts between the package loss or network issue or whether the service is stopped.  
+
+ 
+### Pushgateway 
+ 
+There are some numbers of cases where a target needs to be monitored only for a short time. So, they aren't long enough to be scrapped. EG: scheduled job (cleans up old data), backups, batch jobs, cron jobs etc..  
+
+For such jobs Prometheus offers **pushgateway** component. So that these service can push their metrics at Prometheus database directly.
+
+![pushgateway_pic](pushgateway.png)
+
+<p></p>
+
+# Configuring Prometheus 
+### How does Prometheus know what to scrape and when? 
+
+All that configuration are in the `prometheus.yml` file. We define targets and intervals there.  
+
+Prometheus than use a service discovery mechanism to find those target endpoints.  
+
+![config](configuring_prometheus.png)
+
+After installing prometheus we get a sample config file with default values in it: 
+
+
+**Global config:**  
+
+* How often Prometheus will scrape its targets.  
+
+ 
+
+**Rule config:**  
+
+- Rules for aggregating metric values or creating alert when condition met. Like CPU usage 80% and higher. 
+
+- Prometheus uses rules to generate new time series entries and generate alerts.  
+
+- `evaluate_interval` in the global config defines how often those rules are evaluated.  
+
+**Scrape_config:**  
+
+- Controls what resources Prometheus monitors. Here we defined the targets. 
+
+- Prometheus has its own /metrics endpoint to expose its data. It can monitor its own data/health. In the default configuration there is a single job: Prometheus which scrapes metrics exposed by the Prometheus server.  So it has a single target >> localhost 9090. Prometheus expects metrics to be available on the target on the path of /metrics 
+
+![config2](configuring_prometheus2.png)
+
