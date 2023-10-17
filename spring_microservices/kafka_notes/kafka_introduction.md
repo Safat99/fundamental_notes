@@ -33,6 +33,23 @@ Postman letter box analogy: <br>
 If there is a letter box, the postman will be able to send the letter to the letter box. As a result the receiver, no matter what, will be able to receive the letter when he is not at home. Kafka also make sures that the consumers get the message/event whether is online or not. The producer sends the message/event to the Kafka-server with specific topic and the consumer will be receive them from the Kafka server using that topic. <br><br>
 In microservice based system when there is lots of service running and communicating with each other this is very much needed. It acts as an object for centralizing the system and making the system much reliable.
 
+It has some features:
+* It allows us decoupling of our data streams and systems
+* It is created at LinkedIn and now open-sourced maintained by a private company Confluent.
+* Scalability ( Can Scale to 100 of brokers)
+* High performance.
+
+## Usage
+**Kafka is only used as a transportation medium**
+It can be used as:
+* Messaging system
+* Activity tracking
+* Gather metrics(values) from different locations.(eg: IoT devices)
+* Application Logs gathering
+* Stream processing (with kafka stream API or Spark)
+* Decoupling system dependencies
+* Perform big data integrations. (Work alongside with Hadoop, Spart etc.)
+
 ## How does it work? (High level overview) 
 * PUB-SUB model 
 
