@@ -1,7 +1,9 @@
 first navigate to the kafka/ directory
 
 #### Start the Zookeeper service
-`bin/zookeeper-server-start.sh config/zookeeper.properties`
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
 
 #### Start the Kafka broker service
 ```
