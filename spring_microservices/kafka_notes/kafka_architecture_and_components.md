@@ -8,7 +8,7 @@ Event streaming is the practice of capturing events in real-time from sources li
 
 **Brokers:** A broker refers to a server in the Kafka storage layer. It stores event streams from one or more sources.  
 
-**Cluster:** Distributed computing system. Consists of several brokers. There can be one or more brokers on a Kafka cluster.  
+**Cluster:** Distributed computing system. Consists of several brokers. There can be one or more brokers on a Kafka cluster. A collection of topicsis called a **Kafka Cluster**. A kafka cluster may consist of many Kafka Brokers on many servers. 
 
 **Topic:** Broker receives different types of message/events. They are categorized by topic. The producer can also set message on different types of topics. Consumers subscribed to different topics so that when any message/event come to broker it sends to its particular consumer based on the topic. Consumers can also go to specific topic and collect those message. 
 
