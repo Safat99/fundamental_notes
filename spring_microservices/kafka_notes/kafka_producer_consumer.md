@@ -5,7 +5,7 @@ The role of producer is to get/load the data in Kafka<br>
 * In case of broker failure, Producers automatically recover.
 
 <center>
-    <img src="kafka_producer_load_balancing.jpeg" width="400" height="300">
+    <img src="imgdata/kafka_producer_load_balancing.jpeg" width="400" height="300">
 </center>
 
 This load is balanced by Kafka automatically.

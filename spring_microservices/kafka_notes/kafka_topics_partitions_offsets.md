@@ -13,11 +13,11 @@
 ## Offset
 * Each message within a partition gets an incremented id which is called "Offset"
 <center>
-<img src="offset.png" width = "300">
+<img src="imgdata/offset.png" width = "300">
 </center>
 
 ## Example
-![topic_example](topic_example.png)
+![topic_example](imgdata/topic_example.png)
 
 ## More info
 
@@ -41,7 +41,7 @@ Brokers hold the topics.
 The beauty of Kafka is:
 **When we create  a topic, Kafka will automatically assigned the topic and distributed accross all the brokers**. 
 
-![ef](broker_topic-paritions.png)
+![ef](imgdata/broker_topic-paritions.png)
 
 *Data is distributed and Broker 103 doesn't have any Topic-B data.*
 
@@ -54,11 +54,11 @@ Suppose, we have 3 clusters on our system. When we create a topic, we need to de
 * If a broker is down, another broker can serve the data.
 * Replication factor of N means, we have N copy of our data.
 
-![kafka_replication](kafka_replication.jpeg)
+![kafka_replication](imgdata/kafka_replication.jpeg)
 
 **If we lost Broker 102, Broker 101 and 103 will still serve the data.**
 
-![kafka_rpl_fail](kafka_replication_failure_case.png)
+![kafka_rpl_fail](imgdata/kafka_replication_failure_case.png)
 
 
 ## Concept of Leader for a Partition
