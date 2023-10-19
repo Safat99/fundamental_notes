@@ -12,6 +12,9 @@
 
 ## Offset
 * Each message within a partition gets an incremented id which is called "Offset"
+<center>
+<img src="offset.png" width = "300">
+</center>
 
 ## Example
 ![topic_example](topic_example.png)
