@@ -18,7 +18,7 @@ resources/
     ├── emailTemplate.html
     └── invoice-report-test.jrxml >>> here is the source file
 ```
-5.  Add the following dependencies to the `pom.xm`l file: 
+5.  Add the following dependencies to the `pom.xml` file: 
 ```
 <!--       jasperReport dependency-->  
 <dependency>  
@@ -90,30 +90,30 @@ public static byte[] generatePdfBytes(List<InvoiceDataDto> invoiceDataDtoList) t
 ```
 7. Then use this pdfBytes(byte file) to generate a PDF file. Also, we can extend this as an attachment of a mail.
 ```
-**import java.io.File;  
-import java.io.FileOutputStream;  
-import java.io.IOException;  
-  
-public  class PdfFileGenerator {  
-  
-public  static  void main(String[] args) {  
-try {  
-List<InvoiceDataDto> invoiceDataDtoList = // Initialize your data  
-byte[] pdfBytes = generatePdfBytes(invoiceDataDtoList);  
-writePdfToFile(pdfBytes, "output.pdf");  
-} catch (Exception e) {  
-e.printStackTrace();  
-}  
-}  
-  
-public  static  byte[] generatePdfBytes(List<InvoiceDataDto> invoiceDataDtoList) throws JRException {  
-// Your existing PDF generation logic...  
-}  
-  
-public  static  void writePdfToFile(byte[] pdfBytes, String filePath) throws IOException {  
-try (FileOutputStream fos = new FileOutputStream(new  File(filePath))) {  
-fos.write(pdfBytes);  
-}  
-}  
-}**
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class PdfFileGenerator {
+
+    public static void main(String[] args) {
+        try {
+            List<InvoiceDataDto> invoiceDataDtoList = // Initialize your data
+            byte[] pdfBytes = generatePdfBytes(invoiceDataDtoList);
+            writePdfToFile(pdfBytes, "output.pdf");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static byte[] generatePdfBytes(List<InvoiceDataDto> invoiceDataDtoList) throws JRException {
+        // Your existing PDF generation logic...
+    }
+
+    public static void writePdfToFile(byte[] pdfBytes, String filePath) throws IOException {
+        try (FileOutputStream fos = new FileOutputStream(new File(filePath))) {
+            fos.write(pdfBytes);
+        }
+    }
+}
 ```
