@@ -45,3 +45,8 @@ bin/kafka-server-start.sh config/kraft/server.properties
 
     kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group your-consumer-group
     ```
+
+* **To see the messages that are being sent through Kafka in real-time**
+    ```
+    kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic your-topic-name --from-beginning
+    ```
