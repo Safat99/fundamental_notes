@@ -1,4 +1,4 @@
-# Steps of dockerization for the user-service 
+# Steps of dockerization for a service (user-service) 
 
 To dockerize the user-service we have to follow the following steps:
 
@@ -17,3 +17,64 @@ To dockerize the user-service we have to follow the following steps:
 ```docker build -t user-service-docker .``` (user-service docker >> image name)
 5. Now to see the image list and latest image created ```docker images```
 6. To run the docker image on a port, like port 8000 >> ```docker run -p 8000:7979 user-service-docker```
+
+
+##  Database Configuration 
+
+First, as we are going to launch our spring boot app through docker container it needs to communicate with the database. There can be cases like:
+    
+1. Spring boot app and DB are on the same container --> not a good approach. It's easy though as I have to write only one Dockerfile. 
+
+2. Spring boot app and DB will be on seperate container and they will connect with each other. All the configurations will be written in a Docker-Compose file.
+
+3. the app-container will directly communicate with the Host-Machine. 
+
+### 3. Docker-Container with Host Machine DB
+**Steps:**
+
+1. Find Host Machine's IP address: Docker containers can communicate with host `host.docker.internal`.
+    ```
+    # Linux or macOS
+    ifconfig
+
+    # Windows
+    ipconfig
+    ```
+
+2. Update the application.properties file 
+    
+    ```
+    spring.datasource.url=jdbc:sqlserver://192.168.168.159:1433;databaseName=payment_gateway;trustServerCertificate=true;sendTimeAsDateTime=false
+    ```
+    
+    Now at my case, currently I am using ubuntu and mssql is running on another docker container. Its port is already exposed by the port mapping. `0.0.0.0:1433 -> tcp` So, first I need to find my container Ip address.
+    I can do that using the following docker inspect commnand: 
+    
+    ```
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 9c
+    ```
+    result >> 172.17.0.3
+
+    So, the application.properties file will be changed to now(for may case as mssql is running on docker container)
+
+    ```
+    spring.datasource.url=jdbc:sqlserver://172.17.0.3:1433;databaseName=payment_gateway;trustServerCertificate=true;sendTimeAsDateTime=false
+    ```
+
+
+3. 
+
+4. Adjust the firewall settings
+    
+    - Check firewall status:
+        ```
+        sudo ufw status
+        ```
+    - allow the port
+        ```
+        sudo ufw allow 1433/tcp
+        ```
+
+    
+
+    
