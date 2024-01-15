@@ -23,7 +23,7 @@ To dockerize the user-service we have to follow the following steps:
 
 First, as we are going to launch our spring boot app through docker container it needs to communicate with the database. There can be cases like:
     
-1. Spring boot app and DB are on the same container --> not a good approach. It's easy though as I have to write only one Dockerfile. 
+1. Spring boot app and DB are on the same container --> not a good approach. It's easy though as I have to write only one Dockerfile. But maintaining that is also difficulet. [Check the stackoverflow answer](https://stackoverflow.com/questions/72201256/is-it-a-good-practice-to-have-the-database-within-the-same-container-as-the-app)
 
 2. Spring boot app and DB will be on seperate container and they will connect with each other. All the configurations will be written in a Docker-Compose file.
 
@@ -42,6 +42,8 @@ First, as we are going to launch our spring boot app through docker container it
     ```
 
 2. Update the application.properties file 
+
+    Change the application.properties file in the following line:
     
     ```
     spring.datasource.url=jdbc:sqlserver://192.168.168.159:1433;databaseName=payment_gateway;trustServerCertificate=true;sendTimeAsDateTime=false
@@ -61,8 +63,24 @@ First, as we are going to launch our spring boot app through docker container it
     spring.datasource.url=jdbc:sqlserver://172.17.0.3:1433;databaseName=payment_gateway;trustServerCertificate=true;sendTimeAsDateTime=false
     ```
 
+    ### when multiple properties
+    Sometimes we can have different profiles like development, production, local etc. In that case we can have multiple configuration file. So the folder structure can be look something like this:
+    ```
+    ├── application-dev.properties (or .yml)
+    ├── application.properties
+    └──application-prod.properties
+    ```
 
-3. 
+    In that case we need to change the active profile. 
+    
+
+3. Configure DB for Remote Connections
+
+    We need to make sure that our DB instance in configured to allow remote connections. To do that, we need to configure our DB(SQL Server) to listen on a network port and enable TCP/IP connections.
+
+    - Configure SQL Server and enable TCP/IP
+    - restart db
+
 
 4. Adjust the firewall settings
     
@@ -75,6 +93,13 @@ First, as we are going to launch our spring boot app through docker container it
         sudo ufw allow 1433/tcp
         ```
 
+5. RUN The Spring Boot app:
+
+    #### Run with SPRING_PROFILES_ACTIVE 
+    ```
+    docker run -p 9999:9999 -e SPRING_PROFILES_ACTIVE=dev my-service-docker
+    ```
+    In that case spring will choose to run with the application-dev.properties
     
 
     
