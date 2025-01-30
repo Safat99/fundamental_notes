@@ -39,6 +39,15 @@ Some logical connectors:
 
 
 ## Proof and Disproof
-A proof of a proposition is a convincing argument that the proposition is true.
+- A proof of a proposition is a convincing argument that the proposition is true.
 
-A disproof is an argument that a proposition is false. 
+- A disproof is an argument that a proposition is false. 
+
+
+### Methods of Proof to establish the truth of a proposition
+
+1. Direct Proof
+2. Proof by Contrapositive
+3. Proof by Contradiction
+4. Proof by Cases
+5. Proof by Induction

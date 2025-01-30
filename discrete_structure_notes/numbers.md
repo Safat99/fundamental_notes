@@ -1,6 +1,6 @@
 ## Rational Numbers
 Rational Numbers can be represent as: 
-$\frac{p}{q}$ where p,q $\epsilon$ $Z$ and q $\neq$ 0
+$\frac{p}{q}$ where p,q $\in$ $Z$ and q $\neq$ 0
 
 So, in short: 
 
