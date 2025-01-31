@@ -27,6 +27,32 @@ V = \{A,B,C,D\} \\
 E = \{\;(A,B), (A,C), (A,D), (B,C), (C,D)\ \; \}
 ```
 
+There is a confusion in the edge representation in directed and undirected graphs. Will fix in future.
+
 
 ## Simple Graphs
-A graph with no self loop and parallel edges
+A graph with **no self-loop and no parallel edges**(multiple edge between same two nodes) is called a simple graph
+
+the following has parallel edges and a self loop\
+so not a simple graph.
+
+```
+(A) ---- (B)    (A)-,
+ \_______/       \_/
+```
+
+
+## Directed Graph
+A directed graph G = (V, E) is a directed graph where:
+- V is a non-empty set 
+- E $\subseteq$ V $\times$ V is a set of edges joining(ordered) pairs of vertices.
+
+
+## Subgraph
+
+
+## Path
+
+
+
+

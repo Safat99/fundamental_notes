@@ -3,7 +3,7 @@
 A set is an **unordered** collection of **distinct** objects(elements)
 
 ```math
-c = \{0,1,0\} >> not\, a\,set 
+C = \{0,1,0 \} >> not\, a\,set
 ```
 
 The size of set S as |S|, denotes how many elements we have in the set. Also known as **cardinality** of the set.
@@ -11,7 +11,7 @@ The size of set S as |S|, denotes how many elements we have in the set. Also kno
 Example: 
 
 ```math
-if, \; V = \{A, E, I, O, U\} \\ 
+if, \; V = \{A, E, I, O, U \} \\
 then \; |V| = 5
 ```
 
