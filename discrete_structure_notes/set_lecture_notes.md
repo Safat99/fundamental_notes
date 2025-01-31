@@ -2,18 +2,18 @@
 
 A set is an **unordered** collection of **distinct** objects(elements)
 
-$$
+```math
 c = \{0,1,0\} >> not\, a\,set 
-$$
+```
 
 The size of set S as |S|, denotes how many elements we have in the set. Also known as **cardinality** of the set.
 
 Example: 
 
-$$
+```math
 if, \; V = \{A, E, I, O, U\} \\ 
 then \; |V| = 5
-$$
+```
 
 * A $\in$ V means, A exists on V
 * B $\notin$ means, B does not exist on V.
@@ -38,11 +38,11 @@ $$
 
 Ex:
 
-$$ 
+```math 
 A = \{1,2,3\} \\[10pt]
 P(A) = \{\; \emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1, 2, 3\} \; \} \\[10pt]
 |P(A)| = 8 = 2^3
-$$
+```
 
 ## MultiSets
 A set that allows duplicate elements.
@@ -53,19 +53,20 @@ A multiset M is an **ordered pair** (A, m), where:
 - A is the underlying **set** (the unique elements) 
 - m is a **multiplicity function**, assigning a **non-negative integer** to each element in A, representing the **frequency** 
 such that 
-$$
+```math
 m:A \to Z^+
 \\[5pt]
 M = \{a,a, b,b,b, c, d \}
 \\[5pt]
-$$
+```
+
 We can define:
 
 * Underlying set: A = {a,b,c,d}
 * Multiplicity function:
-$$
+```math
 m(a) = 2, \; m(b) = 3, \; m(c) = 3, \; m(d) = 1
-$$
+```
 
 ### Application of Multisets
 
@@ -82,8 +83,8 @@ The set S contains element x, such that x follows the rule given.
 
 Example:
 
-$$
+```math
 Even = \{x: x \in Z \; and \; 2 | x  \}
-$$
+```
 
 **both the ":" and "|" inside the {} means > such that**
