@@ -75,11 +75,15 @@ $$
 
 
 ## Set Builder Notation
-The set S = { x: a rule about x}
+The set S = { x: a rule about x} <br>
+Also in some book it is also represent as: S = {x | a rule about x}
 
 The set S contains element x, such that x follows the rule given.
 
 Example:
 
 $$
-Even = \{x: \in Z \; and \; 2 | x  \}
+Even = \{x: x \in Z \; and \; 2 | x  \}
+$$
+
+**both the ":" and "|" inside the {} means > such that**
